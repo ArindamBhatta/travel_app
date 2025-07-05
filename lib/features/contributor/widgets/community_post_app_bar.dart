@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
 
 class CommunityPostAppBar extends StatelessWidget {
   final String title;
@@ -15,12 +14,12 @@ class CommunityPostAppBar extends StatelessWidget {
           Text(
             text,
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  foreground: Paint()
-                    ..style = PaintingStyle.stroke
-                    ..strokeWidth = 6
-                    ..color = Colors.purple,
-                ),
+              fontWeight: FontWeight.bold,
+              foreground: Paint()
+                ..style = PaintingStyle.stroke
+                ..strokeWidth = 6
+                ..color = Colors.purple,
+            ),
           ),
           ShaderMask(
             shaderCallback: (bounds) => const LinearGradient(

@@ -135,7 +135,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                   child: Center(
                     child: DotsIndicator(
                       dotsCount: dotsLength,
-                      position: currentDot,
+                      position: (currentDot).toDouble(),
                       //* Limit to original items
                       decorator: DotsDecorator(
                         shape: CircleBorder(

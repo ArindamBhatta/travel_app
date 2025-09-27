@@ -2,17 +2,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:travel_app/common/utils/theme/themes.dart';
+// import 'package:travel_app/common/utils/theme/themes.dart';
 import 'package:travel_app/features/route/app_navigation.dart';
 import 'package:travel_app/features/details_page/utils/details_page_provider.dart';
 import 'package:travel_app/features/introduction_page/Interface/introduction_page.dart';
 import 'features/introduction_page/model/google_login_provider.dart';
 import 'features/home/module/data/home_page_provider.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-
+main() {
   runApp(
     MultiProvider(
       providers: [
@@ -49,7 +46,7 @@ class TravelApp extends StatelessWidget {
       theme: ThemeData.light().copyWith(
         textTheme: GoogleFonts.poppinsTextTheme(),
         scaffoldBackgroundColor: Colors.white,
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
         ),

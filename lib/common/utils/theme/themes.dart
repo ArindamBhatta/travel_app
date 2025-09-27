@@ -42,7 +42,7 @@ abstract final class AppTheme {
     iconTheme: IconThemeData(
       color: Colors.teal[400],
     ),
-    dialogTheme: DialogTheme(
+    dialogTheme: DialogThemeData(
       iconColor: Colors.red,
     ),
     bottomNavigationBarTheme:

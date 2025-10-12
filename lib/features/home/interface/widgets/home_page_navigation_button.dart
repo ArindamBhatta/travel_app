@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/common/utils/widgets/scrollable_tab_bar.dart';
+import 'package:travel_app/core/custom_widgets/scrollable_tab_bar.dart';
 import 'package:travel_app/features/home/module/data/home_page_provider.dart';
 
 class HomePageNavigationButton extends SliverPersistentHeaderDelegate {

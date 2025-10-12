@@ -33,14 +33,28 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.5
+  supabase_flutter: ^2.9.0
+  logger: ^2.0.2+1
+  flutter_dotenv: ^5.1.0
 
-  # State Management
-  provider: ^6.0.5
+  # State management
+  flutter_riverpod: ^2.4.9
+  riverpod_annotation:
+    ^2.3.3
+
+    # UI reactivity
+  flutter_hooks: ^0.20.3
+  hooks_riverpod: ^2.4.9
+
+  # JSON serialization
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.9.0
 
   # Navigation
   go_router: ^10.0.0
 
   # HTTP Client
+  http: ^1.2.0
   dio: ^5.3.2
 
   # Local Storage
@@ -50,9 +64,6 @@ dependencies:
   google_maps_flutter: ^2.5.0
   geolocator: ^10.1.0
   geocoding: ^2.1.1
-
-  # State Persistence
-  flutter_bloc: ^8.1.3
 
   # Image Loading
   cached_network_image: ^3.3.0
@@ -79,6 +90,18 @@ dependencies:
   google_sign_in: ^6.1.6
   curved_navigation_bar: ^1.0.6
   tab_indicator_styler: ^2.0.0
+
+  # Speech to text functionality
+  speech_to_text: ^7.1.0
+  permission_handler: ^11.2.0
+  intl_phone_field: ^3.2.0
+
+  # Photo annotation dependencies
+  photo_view: ^0.14.0
+  flutter_colorpicker: ^1.0.3
+  flutter_signature_pad: ^3.0.0
+  uuid: ^4.0.0
+  provider: ^6.1.5+1
 
 dev_dependencies:
   flutter_test:

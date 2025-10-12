@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:travel_app/common/utils/theme/colors.dart';
+import 'package:travel_app/core/theme/app_colors.dart';
 
 class HomePageAppBar extends StatelessWidget {
   final bool calling;

@@ -2,20 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
-import '../../../introduction_page/model/google_login_provider.dart';
-import '../../../introduction_page/Interface/introduction_page.dart';
+import '../../../on_boarding_screen/model/google_login_provider.dart';
+import '../../../on_boarding_screen/Interface/introduction_page.dart';
 
 void googleLogout(BuildContext context) async {
   try {
     await FirebaseAuth.instance.signOut();
     await GoogleSignIn().signOut();
 
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context) => IntroductionPage(),
-      ),
-    );
+    //logout
   } catch (error) {
     print("Logout failed: $error");
   }

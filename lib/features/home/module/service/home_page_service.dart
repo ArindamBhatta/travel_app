@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:travel_app/features/introduction_page/model/google_login_provider.dart';
+import 'package:travel_app/features/on_boarding_screen/model/google_login_provider.dart';
 
 abstract class HomePageService {
   static String? userAccessToken = GoogleLoginProvider.accessToken;

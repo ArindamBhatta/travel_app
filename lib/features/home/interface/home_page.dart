@@ -3,7 +3,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:travel_app/features/home/interface/widgets/side_drawer.dart';
 import 'package:travel_app/features/home/module/repo/home_page_repo.dart';
-import '../../introduction_page/model/google_login_provider.dart';
+import '../../on_boarding_screen/model/google_login_provider.dart';
 import 'widgets/home_page_body.dart';
 
 class HomePage extends StatefulWidget {

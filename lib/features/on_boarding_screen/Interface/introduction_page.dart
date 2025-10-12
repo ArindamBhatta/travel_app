@@ -2,17 +2,17 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:travel_app/features/introduction_page/Interface/widgets/google_sign_in_button.dart';
-import 'package:travel_app/features/introduction_page/Interface/widgets/scrollable_screen.dart';
+import 'package:travel_app/features/on_boarding_screen/Interface/widgets/google_sign_in_button.dart';
+import 'package:travel_app/features/on_boarding_screen/Interface/widgets/scrollable_screen.dart';
 
-class IntroductionPage extends StatefulWidget {
-  IntroductionPage({super.key});
+class OnBoardingScreen extends StatefulWidget {
+  const OnBoardingScreen({super.key});
 
   @override
-  State<IntroductionPage> createState() => _IntroductionPageState();
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
 }
 
-class _IntroductionPageState extends State<IntroductionPage> {
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
   List<Map<String, String>> list = [
     {
       'caption': 'Explore the new to \n find good places',

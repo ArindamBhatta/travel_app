@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../common/widgets/custom_text_form_field.dart';
+import 'package:travel_app/core/custom_widgets/custom_text_form_field.dart';
 
 class ContributionForm extends StatelessWidget {
   final GlobalKey<FormState> globalKey;

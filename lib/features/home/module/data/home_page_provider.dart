@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/features/home/module/model/publisher_model.dart';
 import 'package:travel_app/features/home/module/repo/home_page_repo.dart';
-import 'package:travel_app/features/introduction_page/model/google_login_provider.dart';
+import 'package:travel_app/features/on_boarding_screen/model/google_login_provider.dart';
 
 enum Continent {
   asia('Asia'),

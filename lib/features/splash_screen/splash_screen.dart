@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:travel_app/core/theme/app_theme.dart';
+import 'package:travel_app/core/theme/dimensions.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
@@ -103,7 +103,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                         fit: BoxFit.contain,
                       ),
                     ),
-                    const SizedBox(height: AppTheme.spacingM),
+                    const SizedBox(height: Dimensions.spacingM),
                     FadeTransition(
                       opacity: _subImage,
                       child: Image.asset(

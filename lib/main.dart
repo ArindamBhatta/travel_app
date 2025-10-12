@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app/core/theme/app_theme.dart';
 import 'package:travel_app/features/splash_screen/splash_screen.dart';
 
 main() {
@@ -14,13 +15,12 @@ class TravelApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Travel App',
       themeMode: ThemeMode.system,
-      theme: ThemeData.light().copyWith(
-        textTheme: GoogleFonts.poppinsTextTheme(),
-        scaffoldBackgroundColor: Colors.white,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
-        ),
+      theme: AppTheme.lightTheme.copyWith(
+        textTheme:
+            GoogleFonts.poppinsTextTheme(), // Optional custom font override
+      ),
+      darkTheme: AppTheme.darkTheme.copyWith(
+        textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme),
       ),
       home: const SplashScreen(),
     );

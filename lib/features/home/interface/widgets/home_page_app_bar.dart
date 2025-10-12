@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:travel_app/core/theme/app_colors.dart';
 
 class HomePageAppBar extends StatelessWidget {
   final bool calling;
@@ -52,7 +51,6 @@ class HomePageAppBar extends StatelessWidget {
                 Text(
                   headingText,
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                        color: AppColors.baseColor,
                         fontWeight: FontWeight.bold,
                         fontStyle: FontStyle.italic,
                         fontSize: 18,

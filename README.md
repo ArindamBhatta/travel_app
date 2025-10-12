@@ -44,3 +44,59 @@ This project is designed with **scalability in mind**, following **MVVM architec
 - `features/` → Feature-based folders following MVVM
 - `services/` → Repositories, Firebase integration
 - `main.dart` → App entry point
+
+## Architecture: MVVM + Riverpod
+
+| Layer          | Responsibility                                    |
+| -------------- | ------------------------------------------------- |
+| **Model**      | Data classes, DTOs, Firestore converters          |
+| **ViewModel**  | Business logic, Riverpod providers, data fetching |
+| **View**       | Stateless UI widgets reacting to providers        |
+| **Repository** | Call Api, caching, Bridge                         |
+| **Service**    | Firebase access, caching, API calls               |
+
+## 📋 Completed Features (Phase 1 ✅)
+
+✅ Continent-based listing
+
+✅ Search bar for destinations
+
+✅ Light & dark mode theming
+
+✅ Responsive UI using Dimensions and AppResponsive
+
+✅ Riverpod-based state management
+
+✅ MVVM folder structure setup
+
+✅ Firebase project integrated
+
+## ✈️ Upcoming Features (Phase 2 🚧)
+
+🔸 Destination detail pages with image carousel
+
+🔸 User authentication (Google & Email)
+
+🔸 Favorites / wishlist feature
+
+🔸 User reviews & ratings
+
+🔸 Trip planner (itinerary builder)
+
+🔸 Map view with nearby destinations
+
+🔸 Push notifications (FCM)
+
+## 🧠 Future Enhancements (Phase 3 🌟)
+
+🤖 AI travel recommendations (OpenAI / Gemini)
+
+🌦 Weather integration for destinations
+
+🧭 Route planner with Maps API
+
+📶 Offline caching
+
+🔗 Social sharing using Firebase Dynamic Links
+
+🏆 Gamification / badges

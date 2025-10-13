@@ -59,10 +59,11 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDn6mw8K705NeZxs3RBM8olI7qARSN09nY',
-    appId: '1:1055462270992:android:bef3e1c84909132bc60295',
-    messagingSenderId: '1055462270992',
-    projectId: 'travel-app-818fa',
-    storageBucket: 'travel-app-818fa.firebasestorage.app',
+    apiKey: 'AIzaSyCKSz6VIRE7Sr6KQcqCOcK_lXFgreB7avg',
+    appId: '1:1024976496411:android:e0167dc754a044909215be',
+    messagingSenderId: '1024976496411',
+    projectId: 'travelapp-ced81',
+    storageBucket: 'travelapp-ced81.firebasestorage.app',
   );
+
 }

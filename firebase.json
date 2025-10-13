@@ -1,0 +1,21 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "travelapp-ced81",
+          "appId": "1:1024976496411:android:e0167dc754a044909215be",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "travelapp-ced81",
+          "configurations": {
+            "android": "1:1024976496411:android:e0167dc754a044909215be"
+          }
+        }
+      }
+    }
+  }
+}

@@ -18,23 +18,23 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       'caption': 'Explore the new to \n find good places',
       'subCaption':
           'Travel around the world with just a tap and enjoy your best holiday',
-      'imageUrl': 'assets/images/onboarding_img_1.jpg',
+      'imageUrl': 'assets/images/onboarding_img_one.png',
     },
     {
       'caption': 'Adventure awaits \n ✈️ ',
       'subCaption':
           "Pack your bags, book your flight, and let's explore the world together",
-      'imageUrl': 'assets/images/onboarding_img_2.jpg',
+      'imageUrl': 'assets/images/onboarding_img_two.png',
     },
     {
       'caption': 'Lost in the beauty of nature',
       'subCaption': "Let's explore the world, one destination at a time.",
-      'imageUrl': 'assets/images/onboarding_img_3.jpg',
+      'imageUrl': 'assets/images/onboarding_img_three.png',
     },
     {
-      'caption': 'Making memories that last a lifetime 📸',
-      'subCaption': 'Travel is the only thing you buy that makes you richer.',
-      'imageUrl': 'assets/images/onboarding_img_4.jpg',
+      'caption': 'Relax, Refresh, Recharge',
+      'subCaption': "Find your perfect getaway and unwind in style.",
+      'imageUrl': 'assets/images/onboarding_img_four.png',
     },
   ];
 
@@ -138,7 +138,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       position: (currentDot).toDouble(),
                       //* Limit to original items
                       decorator: DotsDecorator(
-                        shape: CircleBorder(
+                        shape: const CircleBorder(
                           side: BorderSide(
                             color: Colors.teal,
                             width: 0.8,
@@ -162,8 +162,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               ],
             ),
           ),
-          SizedBox(height: 30),
-          GoogleSignInButton(),
+          const SizedBox(height: 30),
+          const GoogleSignInButton(),
         ],
       ),
     );

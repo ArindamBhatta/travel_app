@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/core/theme/dimensions.dart';
+import 'package:travel_app/features/on_boarding_screen/Interface/introduction_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -94,21 +95,21 @@ class _SplashScreenState extends State<SplashScreen>
           return Stack(
             children: [
               // Background image that fades in last
-              FadeTransition(
-                opacity: _backgroundAnimation,
-                child: Container(
-                  width: double.infinity,
-                  height: double.infinity,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        'assets/images/splash_background.png',
-                      ),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ),
+              // FadeTransition(
+              //   opacity: _backgroundAnimation,
+              //   child: Container(
+              //     width: double.infinity,
+              //     height: double.infinity,
+              //     decoration: const BoxDecoration(
+              //       image: DecorationImage(
+              //         image: AssetImage(
+              //           'assets/images/splash_background.png',
+              //         ),
+              //         fit: BoxFit.cover,
+              //       ),
+              //     ),
+              //   ),
+              // ),
               // Centered logo and text
               Center(
                 child: Column(
@@ -117,7 +118,7 @@ class _SplashScreenState extends State<SplashScreen>
                     FadeTransition(
                       opacity: _mainImageAnimation,
                       child: Image.asset(
-                        'assets/images/restomag_logo.png',
+                        'assets/icons/logo.png',
                         width: actualLogoSize,
                         fit: BoxFit.contain,
                       ),
@@ -126,7 +127,7 @@ class _SplashScreenState extends State<SplashScreen>
                     FadeTransition(
                       opacity: _subImageAnimation,
                       child: Image.asset(
-                        'assets/images/splash_screen_bg.png',
+                        'assets/icons/wanderly.png',
                         width: actualLogoSize,
                         fit: BoxFit.contain,
                       ),
@@ -149,7 +150,7 @@ class _SplashScreenState extends State<SplashScreen>
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          "Welcome to RestoMag",
+                          "Welcome to Wanderly",
                           textAlign: TextAlign.center,
                           style: theme.textTheme.headlineSmall?.copyWith(
                             color: theme.colorScheme.onSurface,
@@ -162,7 +163,10 @@ class _SplashScreenState extends State<SplashScreen>
                           width: double.infinity,
                           child: ElevatedButton(
                             onPressed: () {
-                              // Navigate to next screen
+                              Navigator.of(context)
+                                  .pushReplacement(MaterialPageRoute(
+                                builder: (context) => const OnBoardingScreen(),
+                              ));
                             },
                             style: ElevatedButton.styleFrom(
                               padding: EdgeInsets.symmetric(

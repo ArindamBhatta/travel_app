@@ -1,47 +1,69 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:travel_app/core/theme/dimensions.dart';
 
-class SplashScreen extends ConsumerStatefulWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
   @override
-  ConsumerState<SplashScreen> createState() => _SplashScreenState();
+  createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends ConsumerState<SplashScreen>
+class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
-  late AnimationController _mainImage;
-  late AnimationController _subImage;
-  late AnimationController _backgroundImage;
+  late AnimationController _mainImageController;
+  late AnimationController _subImageController;
+  late AnimationController _backgroundController;
+
+  late Animation<double> _mainImageAnimation;
+  late Animation<double> _subImageAnimation;
+  late Animation<double> _backgroundAnimation;
 
   @override
   void initState() {
     super.initState();
-    _mainImage = AnimationController(
+
+    _mainImageController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 4000),
     );
-    _subImage = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1000),
-    );
-    _backgroundImage = AnimationController(
+
+    _subImageController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1000),
     );
 
-    _mainImage.forward();
+    _backgroundController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1000),
+    );
 
-    _mainImage.addStatusListener((status) {
+    _mainImageAnimation = CurvedAnimation(
+      parent: _mainImageController,
+      curve: Curves.easeIn,
+    );
+
+    _subImageAnimation = CurvedAnimation(
+      parent: _subImageController,
+      curve: Curves.easeIn,
+    );
+
+    _backgroundAnimation = CurvedAnimation(
+      parent: _backgroundController,
+      curve: Curves.easeIn,
+    );
+
+    _mainImageController.forward();
+
+    _mainImageController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        _subImage.forward();
+        _subImageController.forward();
       }
     });
 
-    _subImage.addStatusListener((status) {
+    _subImageController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         Future.delayed(const Duration(seconds: 1), () {
-          if (mounted) _backgroundImage.forward();
+          if (mounted) _backgroundController.forward();
         });
       }
     });
@@ -49,9 +71,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
 
   @override
   void dispose() {
-    _mainImage.dispose();
-    _subImage.dispose();
-    _backgroundImage.dispose();
+    _mainImageController.dispose();
+    _subImageController.dispose();
+    _backgroundController.dispose();
     super.dispose();
   }
 
@@ -64,7 +86,6 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
       backgroundColor: theme.colorScheme.surface,
       body: LayoutBuilder(
         builder: (context, constraints) {
-          // Responsive logo size
           final logoSize = size.width * 0.3;
           const maxLogoSize = 180.0;
           const minLogoSize = 90.0;
@@ -73,30 +94,28 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
           return Stack(
             children: [
               // Background image that fades in last
-              // FadeTransition(
-              //   opacity: _backgroundImage,
-              //   child: Container(
-              //     width: double.infinity,
-              //     height: double.infinity,
-              //     decoration: const BoxDecoration(
-              //       image: DecorationImage(
-              //         image: AssetImage(
-              //           'assets/images/splash_background.png',
-              //         ),
-              //         fit: BoxFit.cover,
-              //       ),
-              //     ),
-              //   ),
-              // ),
-              // Centered logo and text (foreground)
-
+              FadeTransition(
+                opacity: _backgroundAnimation,
+                child: Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                        'assets/images/splash_background.png',
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
               // Centered logo and text
               Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     FadeTransition(
-                      opacity: _mainImage,
+                      opacity: _mainImageAnimation,
                       child: Image.asset(
                         'assets/images/restomag_logo.png',
                         width: actualLogoSize,
@@ -105,9 +124,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                     ),
                     const SizedBox(height: Dimensions.spacingM),
                     FadeTransition(
-                      opacity: _subImage,
+                      opacity: _subImageAnimation,
                       child: Image.asset(
-                        'assets/images/splash_text_img.png',
+                        'assets/images/splash_screen_bg.png',
                         width: actualLogoSize,
                         fit: BoxFit.contain,
                       ),
@@ -116,7 +135,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                 ),
               ),
 
-              // Responsive bottom content
+              // Bottom content
               Align(
                 alignment: Alignment.bottomCenter,
                 child: SafeArea(
@@ -125,7 +144,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                     vertical: size.height * 0.02,
                   ),
                   child: FadeTransition(
-                    opacity: _backgroundImage,
+                    opacity: _backgroundAnimation,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -135,7 +154,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                           style: theme.textTheme.headlineSmall?.copyWith(
                             color: theme.colorScheme.onSurface,
                             fontWeight: FontWeight.w600,
-                            fontSize: size.width * 0.05, // responsive font
+                            fontSize: size.width * 0.05,
                           ),
                         ),
                         SizedBox(height: size.height * 0.03),
@@ -143,7 +162,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                           width: double.infinity,
                           child: ElevatedButton(
                             onPressed: () {
-                              // Navigate to
+                              // Navigate to next screen
                             },
                             style: ElevatedButton.styleFrom(
                               padding: EdgeInsets.symmetric(

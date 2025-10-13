@@ -6,11 +6,10 @@ _A modern cross-platform travel exploration app built with Flutter, Riverpod, an
 
 ## 📸 Project Preview
 
-| Light Mode                                          | Dark Mode                                          |
-| --------------------------------------------------- | -------------------------------------------------- |
-| <img src="screenshots/light_home.png" width="300"/> | <img src="screenshots/dark_home.png" width="300"/> |
-
-> ✨ Tip: You can update screenshots as your app evolves. Place images in a `/screenshots` folder.
+| Light Mode                                                 | Dark Mode |
+| ---------------------------------------------------------- | --------- |
+| <img src="assets/docs/home_screen.jpeg" width="300"/>      |
+| <img src="assets/docs/community_screen.jpeg" width="300"/> |
 
 ---
 
